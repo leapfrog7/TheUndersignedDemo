@@ -13,7 +13,7 @@ const Header = () => {
    const [menuDropDownState, setMenuDropDownState] = React.useState(nav_Menu);
 
    //stores the state of the hamburger menu
-   const [isHamburgerClicked, setIsHamburgerClicked]=React.useState(true);
+   const [isHamburgerClicked, setIsHamburgerClicked]=React.useState(false);
 
    function  dropDownState(id){
 
@@ -375,9 +375,9 @@ function hideAllDropDown(){
 function SideBar(props){
 
   //using this function to stop the side bar from appearing when reloaded
-  React.useEffect(function(){
-      props.toggleHmenu();
-  },[])
+  // React.useEffect(function(){
+  //     props.toggleHmenu();
+  // },[])
 
   const sbItemArr = props.currentState; //this is the state of the menu
   
