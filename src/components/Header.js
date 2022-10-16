@@ -13,7 +13,7 @@ const Header = () => {
    const [menuDropDownState, setMenuDropDownState] = React.useState(nav_Menu);
 
    //stores the state of the hamburger menu
-   const [isHamburgerClicked, setIsHamburgerClicked]=React.useState(false);
+   const [isHamburgerClicked, setIsHamburgerClicked]=React.useState(true);
 
    function  dropDownState(id){
 

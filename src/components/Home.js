@@ -65,7 +65,7 @@ function HeroSection(){
 
     
     return(
-        <div className="h-full text-white">
+        <div className="h-full text-primary">
                 <HeroText/>
         </div>
     )
