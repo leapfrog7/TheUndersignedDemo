@@ -110,7 +110,7 @@ function HeroCards(props){
        
         <div className=" flex flex-col justify center items-center p-4 w-80">
                
-                <h5 className="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-800 dark:text-white">{props.title}</h5>
+                <h5 className="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-800">{props.title}</h5>
               
                 <p className="mb-3 md:text-normal text-sm md:font-normal text-gray-700 dark:text-gray-400 text-center">{props.description}</p>
 
