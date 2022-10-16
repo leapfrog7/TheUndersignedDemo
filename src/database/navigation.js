@@ -11,7 +11,7 @@ export const nav_Menu = [
                 title : "Search CGHS Rate",
                 description : "CGHS rates of listed investigation and treatment through dynamic table",
                 isClicked: false,
-                to:"cghsrates"
+                to:"/cghsrates"
                 
             },
 
