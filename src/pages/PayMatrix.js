@@ -24,7 +24,7 @@ export default function PayMatrix(){
     })
 
     return(
-        <tr className="border-b border-gray-200 dark:border-gray-700">
+        <tr className="border-b border-gray-200 text-gray-700 dark:border-gray-700">
                 {dataCells}
         </tr>
     )
@@ -53,7 +53,7 @@ export default function PayMatrix(){
 
 
                 <div className="flex-grow overflow-auto">
-                    <table className="relative text-xs md:text-sm text-left text-gray-600 dark:text-gray-400">
+                    <table className="relative text-xs md:text-sm text-left text-gray-700">
                         <tr className="text-center">
                             <th className="sticky top-0 left-0 py-4 px-2 md:px-4 bg-blue-100 z-10"><span>Cell</span>
                             <span class="material-symbols-outlined font-light text-sm">arrow_downward</span> </th>
