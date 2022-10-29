@@ -42,6 +42,7 @@ export function Home(){
                         btnBorderColor = 'border-purple-600'
                         btnTextColor = 'text-purple-600'
                         btnHover = 'hover:bg-purple-50'
+                        to = 'paymatrix'
                     />
 
                     <DirectLink
