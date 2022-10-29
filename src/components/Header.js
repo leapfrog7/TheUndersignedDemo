@@ -433,10 +433,10 @@ function SbSubItems(props){
   return(
 
     // The Modal
-    <div className='flex'>
+    <div className='flex z-20'>
 
           {/* The SIDEBAR */}
-          <div className="transition-all fixed inset-0 z-10 overflow-y-auto w-80 bg-white md:hidden">
+          <div className="transition-all fixed inset-0 z-50 overflow-y-auto w-90 bg-white md:hidden">
 
                 <div className="flex items-center justify-between bg-primary text-white">
                     

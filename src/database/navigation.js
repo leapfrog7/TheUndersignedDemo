@@ -45,7 +45,8 @@ export const nav_Menu = [
                 iconURL: require("../images/image1.jpg"),
                 title : "Pay Matrix1",
                 description : "Go through the pay matrix conveniently without getting lost",
-                isClicked: false
+                isClicked: false,
+                to:"/paymatrix"
             },
 
             {
