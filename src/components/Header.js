@@ -118,7 +118,7 @@ const Header = () => {
                 
                 <ul className='flex text-white relative menuList'> 
                  
-                  <li className='data-menu-1'>
+                  <li className='data-menu-1 z-20'>
 
                     <div className='flex gap-1 items-center px-2 py-1 lg:px-4
                     hover:bg-yellow-300 hover:text-neutral-600 rounded hover:cursor-pointer'>
@@ -131,7 +131,7 @@ const Header = () => {
                   
                   </li>
 
-                  <li className='data-menu-2'>
+                  <li className='data-menu-2 z-20'>
                     <div className='flex gap-0 items-center px-2 py-1 lg:px-4
                     hover:bg-yellow-300 hover:text-neutral-600 rounded hover:cursor-pointer'>
 
@@ -145,7 +145,7 @@ const Header = () => {
                    
                   </li>
 
-                  <li className='data-menu-3'>
+                  <li className='data-menu-3 z-20'>
                     <div className='flex gap-1 items-center px-2 py-1 lg:px-4
                     hover:bg-yellow-300 hover:text-neutral-600 rounded hover:cursor-pointer' >
                       
@@ -158,7 +158,7 @@ const Header = () => {
  
                   </li>
 
-                  <li className='data-menu-4'>
+                  <li className='data-menu-4 z-20'>
 
                     <div className='flex gap-1 items-center px-2 py-1 lg:px-4
                     hover:bg-yellow-300 hover:text-neutral-600 rounded hover:cursor-pointer'>

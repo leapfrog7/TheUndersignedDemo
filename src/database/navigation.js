@@ -20,7 +20,8 @@ export const nav_Menu = [
                 iconURL: require("../images/image1.jpg"),
                 title : "CGHS Empanelled Hospital ",
                 description : "Search for CGHS empanelled Hospitals and Diagnostics Center for the Delhi-NCR",
-                isClicked: false
+                isClicked: false,
+                to:"/cghscenter"
             },
 
             {

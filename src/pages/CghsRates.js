@@ -338,7 +338,7 @@ export default function CghsRates(){
 
 
 
-function StatCard(props){
+export function StatCard(props){
     return(
         <div class={`flex flex-col items-center md:flex-row items-center ${props.bgColor} mx-1 md:mx-2 p-1 md:p-2 rounded border`}>
 

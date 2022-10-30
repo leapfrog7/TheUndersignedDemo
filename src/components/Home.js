@@ -32,6 +32,7 @@ export function Home(){
                         btnBorderColor = 'border-green-600'
                         btnTextColor = 'text-green-600'
                         btnHover = 'hover:bg-green-50'
+                        to='cghscenter'
                     />
 
                     <DirectLink

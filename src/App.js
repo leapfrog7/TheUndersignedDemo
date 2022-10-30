@@ -8,6 +8,7 @@ import { Home } from './components/Home';
 import {About} from './components/About';
 import CghsRates from './pages/CghsRates';
 import PayMatrix from './pages/PayMatrix';
+import CghsCenter from './pages/CghsCenter';
  
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='about' element={<About/>}></Route>
           <Route path='/cghsrates' element={<CghsRates/>}></Route>
           <Route path = '/paymatrix' element={<PayMatrix/>}></Route>
+          <Route path = '/cghscenter'element={<CghsCenter/>}></Route>
         </Routes>
         
         <Footer />
