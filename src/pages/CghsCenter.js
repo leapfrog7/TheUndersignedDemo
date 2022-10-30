@@ -238,8 +238,8 @@ export default function CghsCenter(){
                             <select id="pagePerRow" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-16 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setPageSize}>
                             
                                 <option value="10">10</option>
-                                <option value="20">15</option>
-                                <option value="40">25</option>
+                                <option value="15">15</option>
+                                <option value="25">25</option>
                                 
                             </select>
                         </div>
