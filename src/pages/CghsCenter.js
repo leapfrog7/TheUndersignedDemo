@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import Pagination from "../components/Pagination";
 import { StatCard } from "./CghsRates";
 import { DOTS } from "../components/usePagination";
-import nabh1 from "../images/nabh1.png"
+import nabh from "../images/nabh.png";
+import nabl from "../images/Nabl.png"
 
 import {empanelledCenter} from '../database/DBempanelledcenter';
 
@@ -13,6 +14,7 @@ let pageSize = 10
 let totalCount = 0
 let listCityWise = []
 let filteredArr = []
+let city = 'Delhi-NCR'
 
 
 export default function CghsCenter(){
@@ -22,7 +24,7 @@ export default function CghsCenter(){
            
         //load the values pertaining to the City 
         listCityWise = empanelledCenter.filter(function(center){
-            return (center.City=='Delhi-NCR')
+            return (center.City== city && center.isActive)
         })
         totalCount = listCityWise.length
         //return only those values for the selected city
@@ -31,6 +33,7 @@ export default function CghsCenter(){
                     if (index<pageSize)
                     return(
                         <RowOfCenters 
+                            key={center.Key}
                             name = {center.Name}
                             address = {center.Address}
                             facilities = {center.Facilities}
@@ -174,6 +177,7 @@ export default function CghsCenter(){
         setEmpanelledList(listCityWise.map(function(center,index){
             totalCount = listCityWise.length
             if(index>=startIndex && index<=lastIndex)
+           
             return(
                 <RowOfCenters 
                 key = {center.key}
@@ -191,20 +195,59 @@ export default function CghsCenter(){
         console.log(pageSize)
     }
 
+    function setCity(){
+
+        city = document.getElementById('cityList').value // gets the new value of the city
+        
+        let startIndex = 0 //the page is reset and starts again from zero
+        let lastIndex = pageSize-1 //due to zero based array
+
+        setFormData({searchInput:''}) // setting the input back to null ... to remove any previous entry if any
+
+        listCityWise = empanelledCenter.filter(function(center){
+            
+            return (center.City== city && center.isActive)
+        })
+
+        setEmpanelledList(listCityWise.map(function(center,index){
+            totalCount = listCityWise.length
+            if(index>=startIndex && index<=lastIndex)
+           
+            return(
+                <RowOfCenters 
+                key = {center.key}
+                name = {center.Name}
+                address = {center.Address}
+                facilities = {center.Facilities}
+                accreditation = {center.Accreditation}
+   
+             />
+            ) 
+         }))
+
+
+    }
+
 
     function RowOfCenters(props){
 
+        //this helps append a NABH logo depending on Accreditation 
         let isNabh = false
-        if(props.accreditation==='NABH') 
+        let isNabl = false
+        if(props.accreditation.toLowerCase()==='nabh') 
+            {   
+                isNabh=true
+            }
         
-            {   console.log('h')
-                isNabh=true}
-        
+        if (props.accreditation.toLowerCase()==='nabl'){
+            isNabl = true
+        }
 
         return(
             <tr className="border-b hover:bg-gray-100 text-xs md:text-sm">
                 <td className="p-2">
-                   {props.name}  <span className={`${isNabh?'':'hidden'} m-1 inline`}><img src={nabh1} alt="hh" /></span>
+                   {props.name}  <span className={`${isNabh?'':'hidden'} m-1 inline`}><img src={nabh} alt="hh" width={20} height={20} /></span>
+                   <span className={`${isNabl?'':'hidden'} m-1 inline`}><img src={nabl} alt="hh" width={20} height={20}/></span>
                 </td>
                 <td className="p-1 whitespace-normal">
                     {props.address} 
@@ -217,7 +260,13 @@ export default function CghsCenter(){
     }
 
     return(
-        <div className="min-h-screen w-11/12 md:w-3/4 mx-auto my-2 flex flex-col">
+        <div className="min-h-screen w-11/12 md:w-3/4 lg:2/3 mx-auto my-2 flex flex-col">
+
+                <div className="my-4">
+                    <h1 className="text-xl text-primary">CGHS empanelled Hospital/Diagnostics Center</h1>
+                    <h3 className="text-sm text-gray-600 mb-4 font-light md:font-normal">Find the latest CGHS empanelled centers across various CGHS cities. Search by Name, Locality or Medical Facilities you are looking for. </h3> 
+                </div>
+
                 <div className="flex flex-col gap-4 md:flex-row">
                     <div className="flex items-center justify-center">
                         <input className="w-full rounded-l focus:ring-0 focus:border-primary placeholder:text-xs h-12" placeholder="Type in here..." id="searchInput"
@@ -232,17 +281,31 @@ export default function CghsCenter(){
                     </div>
                     
                     <div className="flex gap-2 items-center justify-around">
-                        <div className="flex items-center gap-1 md:gap0.5 flex-col md:flex-row">
-                            
-                            <label for="pagePerRow" className="mb-0 text-xs md:text-sm font-light md:font-medium text-gray-800">Rows Per Page</label>
-                            <select id="pagePerRow" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-16 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setPageSize}>
-                            
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="25">25</option>
+
+                            <div className="flex items-center gap-1 md:gap0.5 flex-col md:flex-row">
                                 
-                            </select>
-                        </div>
+                                <label for="pagePerRow" className="mb-0 text-xs md:text-sm font-light md:font-medium text-gray-800">Rows Per Page</label>
+                                <select id="pagePerRow" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-16 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setPageSize}>
+                                
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="25">25</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div className="flex items-center gap-1 md:gap0.5 flex-col md:flex-row">
+                                
+                                <label for="cityList" className="mb-0 text-xs md:text-sm font-light md:font-medium text-gray-800">Select City</label>
+                                <select id="cityList" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-24 md:w-32 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setCity}>
+                                
+                                    <option value="Delhi-NCR">Delhi-NCR</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                    <option value="Chennai">Chennai</option>
+                                    
+                                </select>
+                            </div>
 
 
                         <div className={`p-0 h-8 md:h-12 `}>
@@ -264,10 +327,19 @@ export default function CghsCenter(){
 
                 </div>
 
-                <div className="mt-4 px-4 flex gap-2 items-center text-xs md:text-sm">
-                    <img src={nabh1} alt="" />
-                    <span> - NABH Accredited</span>
+                <div className="flex gap-4 my-2 md:my-4">
+                     <div className="mt-4 px-4 flex gap-2 items-center text-xs md:text-sm">
+                        <img src={nabh} alt="" width={30} height={30} />
+                        <span> - NABH Accredited</span>
+                    </div>
+
+                    <div className="mt-4 px-4 flex gap-2 items-center text-xs md:text-sm">
+                        <img src={nabl} alt="" width={30} height={30} />
+                        <span> - NABL Accredited</span>
+                    </div>
+
                 </div>
+               
 
                 <div class="overflow-x-auto relative shadow-md my-4">
                             <table className="min-w-full">
