@@ -198,7 +198,7 @@ export default function CghsCenter(){
     function setCity(){
 
         city = document.getElementById('cityList').value // gets the new value of the city
-        
+        matchesFound=0
         let startIndex = 0 //the page is reset and starts again from zero
         let lastIndex = pageSize-1 //due to zero based array
 
