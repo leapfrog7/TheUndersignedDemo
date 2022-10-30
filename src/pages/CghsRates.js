@@ -238,12 +238,13 @@ export default function CghsRates(){
                         </select>
                     </div>
 
+                    
                    <div className="p-0 h-8 md:h-12">
                             <StatCard 
                             text = {'Total Items :'}
                             totalMatches = {CGHS_Rates.length}
-                            bgColor = {'bg-pink-50'}
-                            textColor = {'text-pink-800'}/>
+                            bgColor = {'bg-pink-100'}
+                            textColor = {'text-pink-700'}/>
                     </div>
 
                     <div className={`p-0 h-8 md:h-12 ${formData.searchInput?'animate-sbEnter':'hidden'}`}>

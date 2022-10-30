@@ -267,7 +267,7 @@ export default function CghsCenter(){
                     <h3 className="text-sm text-gray-600 mb-4 font-light md:font-normal">Find the latest CGHS empanelled centers across various CGHS cities. Search by Name, Locality or Medical Facilities you are looking for. </h3> 
                 </div>
 
-                <div className="flex flex-col gap-4 md:flex-row">
+                <div className="flex flex-col gap-4 md:gap-8 md:flex-row">
                     <div className="flex items-center justify-center">
                         <input className="w-full rounded-l focus:ring-0 focus:border-primary placeholder:text-xs h-12" placeholder="Type in here..." id="searchInput"
                             type="text" 
@@ -280,12 +280,12 @@ export default function CghsCenter(){
                         
                     </div>
                     
-                    <div className="flex gap-2 items-center justify-around">
+                    <div className="flex gap-4 items-center justify-around">
 
                             <div className="flex items-center gap-1 md:gap0.5 flex-col md:flex-row">
                                 
                                 <label for="pagePerRow" className="mb-0 text-xs md:text-sm font-light md:font-medium text-gray-800">Rows Per Page</label>
-                                <select id="pagePerRow" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-16 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setPageSize}>
+                                <select id="pagePerRow" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-20 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setPageSize}>
                                 
                                     <option value="10">10</option>
                                     <option value="15">15</option>
@@ -297,7 +297,7 @@ export default function CghsCenter(){
                             <div className="flex items-center gap-1 md:gap0.5 flex-col md:flex-row">
                                 
                                 <label for="cityList" className="mb-0 text-xs md:text-sm font-light md:font-medium text-gray-800">Select City</label>
-                                <select id="cityList" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-24 md:w-32 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setCity}>
+                                <select id="cityList" className="border border-primary h-6 text-gray-700 text-xs md:text-sm rounded-sm w-28 md:w-36 p-1 lg:p-2 md:h-10 focus:ring-1 focus:ring-primary focus:border-0" onChange={setCity}>
                                 
                                     <option value="Delhi-NCR">Delhi-NCR</option>
                                     <option value="Mumbai">Mumbai</option>
@@ -308,26 +308,29 @@ export default function CghsCenter(){
                             </div>
 
 
+                    </div>
+                    <div className="flex flex-row md:flex-col justify-around gap-4 md:gap-1">
+
                         <div className={`p-0 h-8 md:h-12 `}>
                                 <StatCard 
                                 text = {'Total Centers :'}
                                 totalMatches = {listCityWise.length}
-                                bgColor = {'bg-pink-50'}
-                                textColor = {'text-pink-800'}/>
+                                bgColor = {'bg-rose-50'}
+                                textColor = {'text-rose-800'}/>
                         </div>
 
-                        <div className={`p-0 h-8 md:h-12 ${formData.searchInput?'animate-sbEnter':'hidden'}`}>
+                        <div className={`p-0 h-8 md:h-12`}>
                                 <StatCard 
                                 text = {'Matches Found :'}
                                 totalMatches = {matchesFound}
-                                bgColor = {'bg-green-50'}
-                                textColor = {'text-green-800'}/>
+                                bgColor = {'bg-cyan-50'}
+                                textColor = {'text-cyan-800'}/>
                         </div>
                     </div>
 
                 </div>
 
-                <div className="flex gap-4 my-2 md:my-4">
+                <div className="flex gap-4 my-2 md:my-4 justify-around md:justify-center">
                      <div className="mt-4 px-4 flex gap-2 items-center text-xs md:text-sm">
                         <img src={nabh} alt="" width={30} height={30} />
                         <span> - NABH Accredited</span>
