@@ -2,10 +2,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+
 export function Home(){
     return(
         
-            <div>
+            <div className="bg-hero bg-center bg-no-repeat bg-cover bg-fixed ">
                 <HeroSection/>
                 
                 <div className="p-2 m-2" >
@@ -74,28 +75,34 @@ function HeroSection(){
 }
 // bg-hero3 bg-center bg-cover bg-no-repeat
 function HeroText(){
+    // md:bg-hero bg-no-repeat bg-cover bg-center
     return(
-        <div className="text-gray-700 flex flex-col bg-slate-100 py-8  ">
-                <div className="px-4 py-2 mx-auto w-11/12 md:w-4/5 ">
+        <div className="text-gray-700 flex flex-col bg-slate-100 py-8 bg-hero bg-center bg-no-repeat bg-cover bg-fixed ">
+                <div className="px-4 py-2 mx-auto w-11/12 md:w-4/5 bg-white bg-opacity-50">
                     <h1 className=" text-xl font-semibold md:text-2xl"> <span >A portal</span>  for the <span className="text-rose-700">employees of Ministries and Departments</span>  under the Central Government</h1>
 
-                    <h3 className="pt-2 pb-4 text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia quidem aut quisquam deserunt tempora? Iusto eos aspernatur incidunt libero, excepturi dolores, dignissimos voluptatum laborum nam qui quis dolore optio? Ex.</h3>
+                    <h3 className="pt-2 pb-4 text-sm">
+                        The project is being run by the Officers of Central Secretariat Service with the aim to simplify the everyday routine work we handle in Ministries.     
+                    </h3>
                 </div>
 
                 <div className="py-4 flex flex-col gap-12 mx-auto justify-center md:flex-row md:gap-2">
                     
-                    <div className="flex flex-col max-w-sm bg-white rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
-                        <SVGconvenience/>
+                    <div className="flex flex-col max-w-sm bg-white bg-opacity-70 rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
+                        {/* <SVGconvenience/> */}
+                        <div className="bg-convenience bg-center bg-cover h-32 w-48"></div>
                         <HeroCards title='Convenience' description = 'Find the commonly used utilities such as CGHS Listed rates, CGHS Empanelled Center, Pay Matrix etc. without any hassle'/>
                     </div>
                     
-                    <div className="flex flex-col max-w-sm bg-white rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
-                        <SVGproductivity/>
+                    <div className="flex flex-col max-w-sm bg-white bg-opacity-70 rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
+                        {/* <SVGproductivity/> */}
+                        <div className="bg-productivity bg-center bg-cover h-36 w-40"></div>
                         <HeroCards title='Productivity' description='Increase your daily productivity at work with the set of tools that help automate the routine and repetitive work'/>
                     </div>
                     
-                    <div className="flex flex-col max-w-sm bg-white rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
-                        <SVGhelpguide/>
+                    <div className="flex flex-col max-w-sm bg-white bg-opacity-70 rounded-lg border border-gray-200 shadow-md justify-center items-center mx-4 pt-4">
+                        {/* <SVGhelpguide/> */}
+                        <div className="bg-guide bg-center bg-cover h-32 w-48"></div>
                         <HeroCards title='Help Guide' description='A collection of most referenced rules and orders which hold significance for officers of CSS and CSSS'/>
                     </div>
 
@@ -131,7 +138,7 @@ function DirectLink(props){
     return(
 
     <div className="border rounded-lg flex justify-center mt-4 mb-8 ease-in duration-200 hover:-translate-y-[4px]">
-        <div className="flex rounded-lg bg-white shadow-lg">
+        <div className="flex rounded-lg bg-white bg-opacity-70 shadow-lg">
             
             <div className="p-4 flex flex-col">
                 <div className="flex gap-2 items-center">

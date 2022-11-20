@@ -7,9 +7,10 @@ module.exports = {
     extend: {
 
       backgroundImage: {
-        'hero': "url('../src/images/bgHero.jpg')",
-        'hero2':"url('../src/images/hero2.jpg')",
-        'hero3':"url('../src/images/hero3.png')",
+        'hero': "url('../src/images/background.svg')",
+        'convenience':"url('../src/images/convenience1.svg')",
+        'productivity':"url('../src/images/productivity1.svg')",
+        'guide':"url('../src/images/guide1.svg')",
         'searchIcon':"url('../src/images/searchIcon.png')"
       },
 
